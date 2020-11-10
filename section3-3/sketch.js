@@ -2,7 +2,6 @@
 function setup(){
   createCanvas(200, 200);
   calendar(2019, 10);
-
   for(let i = 2000; i <= 2100; i++){
     if(isLeapYear(i)){
       console.log(i + "年はうるう年です");
@@ -16,7 +15,7 @@ function setup(){
 function calendar(y, m){
   let dow = dayOfWeek(y, m, 1);
   for(let d = 1; d <= daysInMonth(y, m); d++){
-    // BLANK[3] (hint: まずは daysInYear, dayOfWeek を作ろう)
+// BLANK[3] (hint: まずは daysInYear, dayOfWeek を作ろう)
   }
 }
 
@@ -25,7 +24,8 @@ function isLeapYear(y){
 }
 
 function daysInYear(y){
-  // BLANK[1]
+   return isLeapYear(y) ? 366 :365;
+// BLANK[1]
 }
 
 function daysInMonth(y, m){
@@ -49,7 +49,11 @@ function dayOfYear(y, m, d){
 }
 
 function dayOfWeek(y, m, d){
-  // BLANK[2]
+  let count =0;
+  for(let i =1; i<m; i++){
+    count += daysInMonth(y,i);
+  }
+  return  (count +d)%7;  // BLANK[2]
 }
 
 function dayOfWeekAsString(dow){
