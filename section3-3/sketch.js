@@ -57,6 +57,6 @@ function dayOfWeek(y, m, d){
 }
 
 function dayOfWeekAsString(dow){
-  const a = ["日", "月", "火", "水", "木", "金", "土", "日"];
+  const a = ["日", "月", "火", "水", "木", "金", "土"];
   return a[dow];
 }
